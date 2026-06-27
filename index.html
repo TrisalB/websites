@@ -3,33 +3,35 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glamour Hair Concept — South Richmond Hill, NY</title>
+<title>Lena's Unisex — South Richmond Hill, NY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Lato:ital,wght@0,300;0,400;0,700;1,300;1,400&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
  
   :root {
-    --black: #0A0A0A;
-    --white: #FAFAFA;
-    --rose: #E8245C;
-    --rose-dark: #C01A4A;
-    --gray: #888;
-    --light: #F2F2F2;
-    --border: rgba(10,10,10,0.1);
-    --f-display: 'Playfair Display', Georgia, serif;
-    --f-body: 'Inter', system-ui, sans-serif;
+    --forest: #2C3E2D;
+    --sage: #7A9E7E;
+    --sage-light: #A8C4AB;
+    --honey: #C8954A;
+    --cream: #F8F5EF;
+    --warm-white: #FDFBF8;
+    --text: #1E2A1F;
+    --mid: #5A6B5B;
+    --border: rgba(44,62,45,0.12);
+    --f-display: 'Abril Fatface', Georgia, serif;
+    --f-script: 'Dancing Script', cursive;
+    --f-body: 'Lato', system-ui, sans-serif;
   }
  
   html { scroll-behavior: smooth; }
- 
   body {
-    background: var(--white);
-    color: var(--black);
+    background: var(--warm-white);
+    color: var(--text);
     font-family: var(--f-body);
     font-weight: 300;
-    line-height: 1.6;
+    line-height: 1.65;
     overflow-x: hidden;
   }
  
@@ -38,549 +40,646 @@
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
     padding: 1.1rem 4rem;
-    background: rgba(10,10,10,0.97);
-    backdrop-filter: blur(10px);
-    border-bottom: 1px solid rgba(255,255,255,0.06);
+    background: var(--forest);
   }
   .nav-logo {
-    font-family: var(--f-display);
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-family: var(--f-script);
+    font-size: 1.6rem;
+    color: var(--cream);
+    letter-spacing: 0.02em;
   }
-  .nav-logo span { color: var(--rose); }
+  .nav-logo span { color: var(--honey); }
   .nav-links {
     display: flex; gap: 2.5rem; list-style: none; align-items: center;
   }
   .nav-links a {
-    color: rgba(250,250,250,0.6);
+    color: rgba(248,245,239,0.6);
     text-decoration: none;
-    font-size: 0.75rem;
+    font-size: 0.78rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 500;
+    font-weight: 400;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--white); }
-  .nav-cta {
-    background: var(--rose) !important;
-    color: var(--white) !important;
-    padding: 0.55rem 1.3rem;
-    border-radius: 0;
-    transition: background 0.2s !important;
+  .nav-links a:hover { color: var(--cream); }
+  .nav-call {
+    background: var(--honey) !important;
+    color: var(--forest) !important;
+    padding: 0.55rem 1.4rem;
+    font-weight: 700 !important;
+    border-radius: 100px;
+    transition: opacity 0.2s !important;
   }
-  .nav-cta:hover { background: var(--rose-dark) !important; }
+  .nav-call:hover { opacity: 0.85 !important; }
  
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    background: var(--black);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-    padding: 0;
-    position: relative;
-    overflow: hidden;
-  }
- 
-  /* Animated diagonal lines — the signature background element */
-  .hero-bg {
-    position: absolute; inset: 0;
-    background:
-      repeating-linear-gradient(
-        -45deg,
-        transparent,
-        transparent 60px,
-        rgba(232,36,92,0.03) 60px,
-        rgba(232,36,92,0.03) 61px
-      );
-  }
- 
-  .hero-top {
-    flex: 1;
-    display: flex;
+    background: var(--cream);
+    display: grid;
+    grid-template-columns: 1fr 420px;
     align-items: center;
-    padding: 10rem 4rem 4rem;
-    position: relative; z-index: 2;
+    padding-top: 68px;
+    overflow: hidden;
+    position: relative;
   }
  
-  .hero-content { max-width: 800px; }
- 
-  .hero-tag {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    margin-bottom: 2rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.2em;
-    text-transform: uppercase;
-    color: var(--rose);
-    font-weight: 600;
-  }
-  .hero-tag::after {
+  /* Subtle leaf/organic pattern */
+  .hero::before {
     content: '';
-    display: block;
-    width: 40px; height: 1px;
-    background: var(--rose);
+    position: absolute; inset: 0;
+    background-image:
+      radial-gradient(circle at 20% 80%, rgba(122,158,126,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 20%, rgba(200,149,74,0.06) 0%, transparent 40%);
+    pointer-events: none;
+  }
+ 
+  .hero-left {
+    padding: 5rem 3rem 5rem 5rem;
+    position: relative; z-index: 1;
+  }
+ 
+  .hero-since {
+    display: inline-block;
+    font-family: var(--f-script);
+    font-size: 1.1rem;
+    color: var(--sage);
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.02em;
   }
  
   .hero-title {
     font-family: var(--f-display);
-    font-size: clamp(4rem, 9vw, 8.5rem);
-    font-weight: 900;
-    line-height: 0.92;
-    color: var(--white);
-    text-transform: uppercase;
-    letter-spacing: -0.02em;
-    margin-bottom: 0.15em;
-  }
-  .hero-title-italic {
-    font-style: italic;
-    font-weight: 400;
-    color: var(--rose);
-    display: block;
-    font-size: 0.85em;
-    letter-spacing: 0;
+    font-size: clamp(3.2rem, 6.5vw, 6rem);
+    color: var(--forest);
+    line-height: 1.0;
+    margin-bottom: 0.4em;
+    letter-spacing: -0.01em;
   }
  
-  .hero-sub {
-    margin-top: 2rem;
-    display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
-  }
-  .hero-desc {
-    color: rgba(250,250,250,0.45);
-    font-size: 0.9rem;
-    max-width: 320px;
+  .hero-subtitle {
+    font-size: 1.05rem;
+    color: var(--mid);
+    max-width: 400px;
+    margin-bottom: 2.5rem;
+    font-style: italic;
+    font-weight: 300;
     line-height: 1.7;
   }
-  .hero-rating-block {
-    display: flex; flex-direction: column; gap: 0.25rem;
-    border-left: 2px solid var(--rose);
-    padding-left: 1.2rem;
+ 
+  .hero-rating {
+    display: inline-flex; align-items: center; gap: 0.7rem;
+    background: var(--forest);
+    color: var(--cream);
+    padding: 0.6rem 1.3rem;
+    border-radius: 100px;
+    margin-bottom: 2.5rem;
   }
-  .hero-rating-num {
-    font-family: var(--f-display);
-    font-size: 2.8rem;
+  .hero-rating-stars { color: var(--honey); font-size: 0.85rem; }
+  .hero-rating-text { font-size: 0.78rem; font-weight: 400; letter-spacing: 0.04em; }
+ 
+  .hero-ctas {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+    margin-bottom: 3rem;
+  }
+  .btn-primary {
+    background: var(--forest);
+    color: var(--cream);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    font-family: var(--f-body);
+    font-size: 0.82rem;
     font-weight: 700;
-    color: var(--white);
-    line-height: 1;
-  }
-  .hero-rating-stars { color: var(--rose); font-size: 0.85rem; }
-  .hero-rating-label {
-    color: rgba(250,250,250,0.4);
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
+    text-decoration: none;
+    transition: background 0.2s;
+    border: none; cursor: pointer;
+  }
+  .btn-primary:hover { background: #1a251b; }
+  .btn-outline {
+    background: transparent;
+    color: var(--forest);
+    padding: 0.9rem 2rem;
+    border-radius: 100px;
+    border: 2px solid var(--forest);
+    font-family: var(--f-body);
+    font-size: 0.82rem;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: all 0.2s;
+  }
+  .btn-outline:hover { background: var(--forest); color: var(--cream); }
+ 
+  .hero-info {
+    display: flex; flex-wrap: wrap; gap: 1.5rem;
+  }
+  .hero-info-chip {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-size: 0.78rem;
+    color: var(--mid);
+  }
+  .hero-info-chip svg { color: var(--sage); flex-shrink: 0; }
+ 
+  /* ── SIGNATURE MEDALLION ── */
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+    padding: 4rem 3rem 4rem 1rem;
+    position: relative; z-index: 1;
   }
  
-  /* ── TICKER STRIP ── */
-  .ticker {
-    background: var(--rose);
-    padding: 0.75rem 0;
-    overflow: hidden;
-    position: relative; z-index: 2;
-  }
-  .ticker-track {
-    display: flex;
-    gap: 0;
-    animation: tickerScroll 25s linear infinite;
-    white-space: nowrap;
-  }
-  @keyframes tickerScroll {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-  }
-  .ticker-item {
-    display: inline-flex; align-items: center; gap: 1.2rem;
-    padding: 0 2rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--white);
-    flex-shrink: 0;
-  }
-  .ticker-dot {
-    width: 4px; height: 4px;
-    background: rgba(255,255,255,0.4);
+  .medallion {
+    width: 340px; height: 340px;
     border-radius: 50%;
-    flex-shrink: 0;
+    background: var(--forest);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 2rem;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(44,62,45,0.25);
+  }
+  .medallion::before {
+    content: '';
+    position: absolute;
+    inset: 12px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(200,149,74,0.4);
+  }
+  .medallion::after {
+    content: '';
+    position: absolute;
+    inset: 20px;
+    border-radius: 50%;
+    border: 1px solid rgba(200,149,74,0.15);
+  }
+  .medallion-est {
+    font-size: 0.62rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--sage-light);
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+  }
+  .medallion-years {
+    font-family: var(--f-display);
+    font-size: 5rem;
+    color: var(--honey);
+    line-height: 1;
+    margin-bottom: 0.1em;
+  }
+  .medallion-years-label {
+    font-family: var(--f-script);
+    font-size: 1.3rem;
+    color: var(--cream);
+    margin-bottom: 0.75rem;
+  }
+  .medallion-divider {
+    width: 40px; height: 1px;
+    background: rgba(200,149,74,0.4);
+    margin: 0 auto 0.75rem;
+  }
+  .medallion-sub {
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(248,245,239,0.5);
+    font-weight: 400;
+    line-height: 1.6;
   }
  
-  @media (prefers-reduced-motion: reduce) {
-    .ticker-track { animation: none; }
+  /* floating dots */
+  .hero-dot {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--sage);
+    opacity: 0.15;
   }
+  .hero-dot-1 { width: 80px; height: 80px; top: 15%; right: 8%; }
+  .hero-dot-2 { width: 40px; height: 40px; bottom: 20%; right: 18%; background: var(--honey); }
+  .hero-dot-3 { width: 20px; height: 20px; top: 30%; left: 2%; }
  
-  /* ── HOURS BAR ── */
-  .hours-bar {
-    background: var(--light);
-    border-bottom: 1px solid var(--border);
-    padding: 1rem 4rem;
+  /* ── GOOD-FOR STRIP ── */
+  .good-for {
+    background: var(--sage);
+    padding: 1.2rem 5rem;
     display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
   }
-  .hours-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    font-weight: 600;
-    color: var(--gray);
-  }
-  .hours-grid {
-    display: flex; gap: 2rem; flex-wrap: wrap;
-  }
-  .hours-day {
-    font-size: 0.78rem;
-    color: var(--black);
-    font-weight: 400;
-  }
-  .hours-day strong { font-weight: 600; }
- 
-  /* ── SERVICES ── */
-  .services {
-    padding: 7rem 4rem;
-    background: var(--white);
-  }
-  .section-eyebrow {
+  .good-for-label {
     font-size: 0.68rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    font-weight: 600;
-    color: var(--rose);
+    color: var(--forest);
+    font-weight: 700;
+    flex-shrink: 0;
+  }
+  .good-for-chips {
+    display: flex; gap: 0.75rem; flex-wrap: wrap;
+  }
+  .good-for-chip {
+    background: rgba(44,62,45,0.15);
+    color: var(--forest);
+    padding: 0.35rem 1rem;
+    border-radius: 100px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+  }
+  .good-for-hours {
+    margin-left: auto;
+    font-size: 0.78rem;
+    color: var(--forest);
+    font-weight: 400;
+    opacity: 0.8;
+  }
+ 
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 5rem;
+    background: var(--warm-white);
+  }
+  .eyebrow {
+    font-family: var(--f-script);
+    font-size: 1.3rem;
+    color: var(--sage);
     display: block;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
   }
   .section-title {
     font-family: var(--f-display);
-    font-size: clamp(2rem, 4vw, 3.5rem);
-    font-weight: 700;
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--forest);
     line-height: 1.05;
-    color: var(--black);
     margin-bottom: 3.5rem;
   }
-  .section-title em { font-style: italic; font-weight: 400; }
  
-  .services-list {
+  .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    border-top: 2px solid var(--black);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
   }
-  .service-item {
-    border-bottom: 1px solid var(--border);
-    border-right: 1px solid var(--border);
-    padding: 1.5rem 1.8rem;
-    display: flex; align-items: center; gap: 0.75rem;
-    transition: background 0.2s;
+  .service-card {
+    background: var(--cream);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.8rem;
+    display: flex; align-items: center; gap: 1rem;
+    transition: background 0.2s, border-color 0.2s, transform 0.2s;
     cursor: default;
   }
-  .service-item:hover { background: var(--black); color: var(--white); }
-  .service-item:hover .service-arrow { color: var(--rose); }
-  .service-arrow {
-    color: var(--rose);
-    font-size: 0.7rem;
-    transition: color 0.2s;
+  .service-card:hover {
+    background: var(--forest);
+    border-color: var(--forest);
+    transform: translateY(-2px);
+  }
+  .service-card:hover .service-icon { background: rgba(200,149,74,0.2); }
+  .service-card:hover .service-icon svg { color: var(--honey); }
+  .service-card:hover .service-name { color: var(--cream); }
+  .service-icon {
+    width: 40px; height: 40px;
+    background: rgba(122,158,126,0.15);
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
     flex-shrink: 0;
+    transition: background 0.2s;
   }
+  .service-icon svg { color: var(--sage); transition: color 0.2s; }
   .service-name {
-    font-size: 0.85rem;
-    font-weight: 500;
-    letter-spacing: 0.02em;
-  }
- 
-  /* ── TEAM ── */
-  .team {
-    background: var(--black);
-    padding: 7rem 4rem;
-  }
-  .team .section-title { color: var(--white); }
- 
-  .team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-    gap: 1px;
-    background: rgba(255,255,255,0.07);
-    margin-top: 0;
-    border: 1px solid rgba(255,255,255,0.07);
-  }
-  .team-card {
-    background: var(--black);
-    padding: 2.5rem 2rem;
-    transition: background 0.25s;
-    position: relative;
-  }
-  .team-card::before {
-    content: '';
-    position: absolute; top: 0; left: 0; right: 0;
-    height: 2px;
-    background: var(--rose);
-    transform: scaleX(0);
-    transform-origin: left;
-    transition: transform 0.3s ease;
-  }
-  .team-card:hover { background: #111; }
-  .team-card:hover::before { transform: scaleX(1); }
- 
-  .team-initial {
-    font-family: var(--f-display);
-    font-size: 3.5rem;
-    font-weight: 900;
-    line-height: 1;
-    color: rgba(255,255,255,0.08);
-    margin-bottom: 0.75rem;
-    letter-spacing: -0.02em;
-  }
-  .team-name {
-    font-family: var(--f-display);
-    font-size: 1.4rem;
+    font-size: 0.9rem;
     font-weight: 700;
-    color: var(--white);
-    margin-bottom: 0.3rem;
+    color: var(--forest);
+    transition: color 0.2s;
   }
-  .team-role {
-    font-size: 0.68rem;
-    letter-spacing: 0.15em;
+ 
+  /* ── STORY ── */
+  .story {
+    background: var(--forest);
+    padding: 7rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .story-text {}
+  .story-eyebrow {
+    font-family: var(--f-script);
+    font-size: 1.3rem;
+    color: var(--sage-light);
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .story-title {
+    font-family: var(--f-display);
+    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    color: var(--cream);
+    line-height: 1.1;
+    margin-bottom: 1.5rem;
+  }
+  .story-body {
+    color: rgba(248,245,239,0.65);
+    font-size: 0.95rem;
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+  }
+  .story-stats {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid rgba(248,245,239,0.1);
+  }
+  .stat-num {
+    font-family: var(--f-display);
+    font-size: 2.5rem;
+    color: var(--honey);
+    line-height: 1;
+    margin-bottom: 0.25rem;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--rose);
-    font-weight: 600;
-    margin-bottom: 1rem;
+    color: rgba(248,245,239,0.45);
+    font-weight: 700;
   }
-  .team-desc {
-    font-size: 0.82rem;
-    color: rgba(255,255,255,0.45);
-    line-height: 1.7;
+ 
+  /* specialties list */
+  .story-specialties {
+    display: flex; flex-direction: column; gap: 1rem;
+  }
+  .specialty-item {
+    background: rgba(248,245,239,0.05);
+    border: 1px solid rgba(248,245,239,0.08);
+    border-radius: 12px;
+    padding: 1.4rem 1.6rem;
+    display: flex; align-items: flex-start; gap: 1rem;
+    transition: background 0.2s;
+  }
+  .specialty-item:hover { background: rgba(248,245,239,0.08); }
+  .specialty-dot {
+    width: 8px; height: 8px;
+    background: var(--honey);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.5rem;
+  }
+  .specialty-title {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--cream);
+    margin-bottom: 0.2rem;
+  }
+  .specialty-desc {
+    font-size: 0.8rem;
+    color: rgba(248,245,239,0.5);
+    line-height: 1.6;
   }
  
   /* ── REVIEWS ── */
   .reviews {
-    background: var(--white);
-    padding: 7rem 4rem;
+    background: var(--cream);
+    padding: 7rem 5rem;
   }
-  .reviews-header {
+  .reviews-intro {
     display: flex; align-items: flex-end; justify-content: space-between;
     margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;
   }
-  .reviews-badge {
-    background: var(--black);
-    color: var(--white);
-    padding: 1.5rem 2rem;
-    display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem;
+  .rating-display {
+    text-align: right;
   }
-  .reviews-badge-num {
+  .rating-big {
     font-family: var(--f-display);
-    font-size: 2.5rem;
-    font-weight: 900;
+    font-size: 4rem;
+    color: var(--forest);
     line-height: 1;
-    color: var(--rose);
   }
-  .reviews-badge-stars { color: var(--rose); font-size: 1rem; }
-  .reviews-badge-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.12em;
+  .rating-stars-row { color: var(--honey); font-size: 1.2rem; margin: 0.2rem 0; }
+  .rating-count {
+    font-size: 0.75rem;
+    color: var(--mid);
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.5);
   }
  
   .reviews-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 0;
-    border: 1px solid var(--border);
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
   }
   .review-card {
+    background: var(--warm-white);
+    border-radius: 16px;
     padding: 2rem;
-    border-right: 1px solid var(--border);
-    border-bottom: 1px solid var(--border);
+    border: 1px solid var(--border);
+    transition: box-shadow 0.2s, transform 0.2s;
     position: relative;
-    transition: background 0.2s;
   }
-  .review-card:hover { background: var(--light); }
-  .review-card:nth-child(3n) { border-right: none; }
-  .review-top {
+  .review-card:hover {
+    box-shadow: 0 8px 30px rgba(44,62,45,0.1);
+    transform: translateY(-3px);
+  }
+  .review-leaf {
+    position: absolute;
+    top: 1.5rem; right: 1.5rem;
+    font-family: var(--f-display);
+    font-size: 3.5rem;
+    color: var(--sage);
+    opacity: 0.1;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .review-header {
     display: flex; align-items: center; gap: 0.75rem;
     margin-bottom: 1.2rem;
   }
   .review-avatar {
-    width: 38px; height: 38px;
-    background: var(--rose);
+    width: 42px; height: 42px;
+    background: var(--sage);
     border-radius: 50%;
     display: flex; align-items: center; justify-content: center;
     font-family: var(--f-display);
-    font-weight: 700;
-    font-size: 1rem;
-    color: var(--white);
+    font-size: 1.1rem;
+    color: var(--cream);
     flex-shrink: 0;
   }
-  .review-author-name {
-    font-size: 0.82rem;
-    font-weight: 600;
-    color: var(--black);
-    margin-bottom: 0.1rem;
+  .review-name {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--forest);
+    margin-bottom: 0.15rem;
   }
-  .review-stars { color: var(--rose); font-size: 0.7rem; }
+  .review-stars { color: var(--honey); font-size: 0.75rem; }
   .review-text {
-    font-size: 0.85rem;
-    color: #444;
+    font-size: 0.88rem;
+    color: var(--mid);
     line-height: 1.75;
     font-style: italic;
+    margin-bottom: 1.2rem;
   }
-  .review-service-tag {
+  .review-years {
     display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.65rem;
-    letter-spacing: 0.12em;
+    background: rgba(122,158,126,0.12);
+    color: var(--forest);
+    padding: 0.25rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
     text-transform: uppercase;
-    font-weight: 600;
-    color: var(--rose);
   }
  
-  /* ── VISIT ── */
-  .visit {
-    background: var(--light);
-    padding: 7rem 4rem;
+  /* ── HOURS ── */
+  .hours-section {
+    background: var(--warm-white);
+    padding: 5rem 5rem;
     display: grid;
-    grid-template-columns: 1fr 1.2fr;
-    gap: 6rem;
-    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    gap: 5rem;
+    align-items: start;
   }
-  .visit .section-title { margin-bottom: 2rem; }
- 
-  .visit-details {
-    display: flex; flex-direction: column; gap: 0;
+  .hours-grid {
+    margin-top: 2rem;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
   }
-  .visit-row {
-    display: flex; align-items: flex-start; gap: 1.5rem;
-    padding: 1.5rem 0;
+  .hours-row {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 1rem 1.5rem;
     border-bottom: 1px solid var(--border);
+    transition: background 0.15s;
   }
-  .visit-row:first-child { border-top: 1px solid var(--border); }
-  .visit-row-icon {
-    width: 40px; height: 40px;
-    background: var(--black);
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0;
-    margin-top: 0.1rem;
-  }
-  .visit-row-label {
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row:hover { background: var(--cream); }
+  .hours-row.closed { opacity: 0.45; }
+  .hours-day { font-size: 0.85rem; font-weight: 700; color: var(--forest); }
+  .hours-time { font-size: 0.82rem; color: var(--mid); font-weight: 300; }
+  .hours-badge-closed {
     font-size: 0.65rem;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 600;
-    color: var(--gray);
-    margin-bottom: 0.3rem;
+    color: #c0392b;
+    font-weight: 700;
+    background: rgba(192,57,43,0.08);
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
   }
-  .visit-row-value {
-    font-size: 0.9rem;
-    color: var(--black);
-    line-height: 1.6;
-    font-weight: 400;
-  }
-  .visit-row-value a { color: var(--black); text-decoration: none; }
-  .visit-row-value a:hover { color: var(--rose); }
  
   .visit-map {
-    height: 460px;
+    border-radius: 16px;
     overflow: hidden;
-    position: relative;
+    border: 1px solid var(--border);
+    height: 340px;
+    box-shadow: 0 4px 20px rgba(44,62,45,0.08);
+    margin-top: 2rem;
   }
-  .visit-map iframe {
-    width: 100%; height: 100%; border: 0;
-    filter: grayscale(100%) contrast(1.1);
-    transition: filter 0.4s;
-  }
-  .visit-map:hover iframe { filter: grayscale(0%) contrast(1); }
-  .visit-map-overlay {
-    position: absolute; bottom: 0; left: 0; right: 0;
-    background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 100%);
-    height: 80px;
-    pointer-events: none;
-  }
+  .visit-map iframe { width: 100%; height: 100%; border: 0; }
  
-  .book-bar {
-    background: var(--rose);
-    padding: 2.5rem 4rem;
-    display: flex; align-items: center; justify-content: space-between;
-    flex-wrap: wrap; gap: 2rem;
+  .visit-details {
+    display: flex; flex-direction: column; gap: 1rem;
+    margin-top: 2rem;
   }
-  .book-bar-text {
+  .visit-row {
+    display: flex; align-items: center; gap: 0.75rem;
+    font-size: 0.85rem;
+    color: var(--mid);
+  }
+  .visit-row svg { color: var(--sage); flex-shrink: 0; }
+  .visit-row a { color: var(--forest); text-decoration: none; font-weight: 700; }
+  .visit-row a:hover { color: var(--sage); }
+ 
+  /* ── CTA BANNER ── */
+  .cta-banner {
+    background: var(--honey);
+    padding: 4rem 5rem;
+    text-align: center;
+  }
+  .cta-script {
+    font-family: var(--f-script);
+    font-size: 1.5rem;
+    color: var(--forest);
+    margin-bottom: 0.5rem;
+    opacity: 0.75;
+  }
+  .cta-title {
+    font-family: var(--f-display);
+    font-size: clamp(2rem, 4vw, 3rem);
+    color: var(--forest);
+    margin-bottom: 1.5rem;
+    line-height: 1.1;
+  }
+  .cta-phone {
     font-family: var(--f-display);
     font-size: 1.8rem;
-    font-style: italic;
-    font-weight: 400;
-    color: var(--white);
-  }
-  .btn-white {
-    background: var(--white);
-    color: var(--rose);
-    padding: 1rem 2.5rem;
-    border: none; border-radius: 0;
-    font-family: var(--f-body);
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
+    color: var(--forest);
     text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s, color 0.2s;
-    flex-shrink: 0;
+    display: inline-block;
+    border-bottom: 3px solid rgba(44,62,45,0.3);
+    padding-bottom: 0.1em;
+    transition: border-color 0.2s;
   }
-  .btn-white:hover { background: var(--black); color: var(--white); }
+  .cta-phone:hover { border-color: var(--forest); }
  
   /* ── FOOTER ── */
   footer {
-    background: var(--black);
-    padding: 2rem 4rem;
+    background: var(--forest);
+    padding: 2rem 5rem;
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 1rem;
-    border-top: 1px solid rgba(255,255,255,0.06);
   }
   .footer-logo {
-    font-family: var(--f-display);
-    font-size: 0.95rem;
-    font-weight: 700;
-    color: var(--white);
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
+    font-family: var(--f-script);
+    font-size: 1.4rem;
+    color: var(--cream);
   }
-  .footer-logo span { color: var(--rose); }
   .footer-nav {
     display: flex; gap: 2rem; list-style: none;
   }
   .footer-nav a {
-    color: rgba(255,255,255,0.3);
+    color: rgba(248,245,239,0.4);
     text-decoration: none;
     font-size: 0.72rem;
     letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  .footer-nav a:hover { color: var(--rose); }
+  .footer-nav a:hover { color: var(--sage-light); }
   .footer-copy {
-    color: rgba(255,255,255,0.2);
     font-size: 0.72rem;
-    letter-spacing: 0.05em;
+    color: rgba(248,245,239,0.25);
   }
  
   /* ── REVEALS ── */
   .reveal {
-    opacity: 0; transform: translateY(20px);
+    opacity: 0; transform: translateY(18px);
     transition: opacity 0.55s ease, transform 0.55s ease;
   }
-  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal.visible { opacity: 1; transform: none; }
  
   /* ── RESPONSIVE ── */
   @media (max-width: 960px) {
     nav { padding: 1rem 1.5rem; }
     .nav-links { display: none; }
-    .hero-top { padding: 8rem 2rem 3rem; }
-    .hours-bar { padding: 1rem 2rem; }
-    .services, .reviews, .team { padding: 4rem 2rem; }
-    .reviews-grid { grid-template-columns: 1fr; }
-    .review-card { border-right: none; }
-    .visit { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
-    .visit-map { height: 280px; }
-    .book-bar { padding: 2rem; }
+    .hero { grid-template-columns: 1fr; min-height: auto; padding-top: 68px; }
+    .hero-left { padding: 3rem 2rem; }
+    .hero-right { padding: 0 2rem 3rem; }
+    .medallion { width: 260px; height: 260px; }
+    .medallion-years { font-size: 3.5rem; }
+    .good-for { padding: 1.2rem 2rem; }
+    .services, .reviews, .hours-section { padding: 4rem 2rem; }
+    .services-grid { grid-template-columns: 1fr 1fr; }
+    .story { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+    .hours-section { grid-template-columns: 1fr; }
+    .cta-banner { padding: 3rem 2rem; }
     footer { padding: 1.5rem 2rem; }
   }
- 
+  @media (max-width: 600px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+  }
   @media (prefers-reduced-motion: reduce) {
     .reveal { opacity: 1; transform: none; }
   }
@@ -590,322 +689,365 @@
  
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Glamour<span>.</span></div>
+  <div class="nav-logo">Lena<span>'s</span></div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#team">Team</a></li>
+    <li><a href="#story">Our Story</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#visit">Visit</a></li>
-    <li><a href="tel:7183221698" class="nav-cta">Call Now</a></li>
+    <li><a href="#hours">Hours & Location</a></li>
+    <li><a href="tel:7188439159" class="nav-call">Call Now</a></li>
   </ul>
 </nav>
  
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-bg"></div>
-  <div class="hero-top">
-    <div class="hero-content">
-      <div class="hero-tag">Full Service Salon · South Richmond Hill, NY</div>
-      <h1 class="hero-title">
-        Feel
-        <span class="hero-title-italic">Glamorous</span>
-        Every Day
-      </h1>
-      <div class="hero-sub">
-        <p class="hero-desc">Hair, nails, wax, tanning, permanent makeup and more — South Queens' destination for beauty since day one.</p>
-        <div class="hero-rating-block">
-          <div class="hero-rating-num">4.8</div>
-          <div class="hero-rating-stars">★★★★★</div>
-          <div class="hero-rating-label">1,100+ Google Reviews</div>
-        </div>
+  <div class="hero-dot hero-dot-1"></div>
+  <div class="hero-dot hero-dot-2"></div>
+  <div class="hero-dot hero-dot-3"></div>
+ 
+  <div class="hero-left">
+    <span class="hero-since">Trusted since the '90s</span>
+    <h1 class="hero-title">Your Hair,<br>Your Story.</h1>
+    <p class="hero-subtitle">A neighborhood salon where you're always family — unisex, all ages, all hair types.</p>
+ 
+    <div class="hero-rating">
+      <span class="hero-rating-stars">★★★★★</span>
+      <span class="hero-rating-text">4.9 · 218 Reviews on Google</span>
+    </div>
+ 
+    <div class="hero-ctas">
+      <a href="tel:7188439159" class="btn-primary">Call to Book</a>
+      <a href="#reviews" class="btn-outline">Read Reviews</a>
+    </div>
+ 
+    <div class="hero-info">
+      <div class="hero-info-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        104-11 116th St, South Richmond Hill
+      </div>
+      <div class="hero-info-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+        All ages & hair types welcome
+      </div>
+      <div class="hero-info-chip">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        Good for kids
       </div>
     </div>
   </div>
  
-  <!-- TICKER -->
-  <div class="ticker">
-    <div class="ticker-track">
-      <span class="ticker-item">Blowouts <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Braids <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Eyebrow Shaping <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Threading <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Haircut <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Hair Extensions <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Hairstyling <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Massage <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Permanent Makeup <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Perms <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Tanning <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Waxing <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Shampoo & Conditioning <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Balayage <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Shanaz Facial <span class="ticker-dot"></span></span>
-      <!-- duplicate for seamless loop -->
-      <span class="ticker-item">Blowouts <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Braids <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Eyebrow Shaping <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Threading <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Haircut <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Hair Extensions <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Hairstyling <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Massage <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Permanent Makeup <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Perms <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Tanning <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Waxing <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Shampoo & Conditioning <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Balayage <span class="ticker-dot"></span></span>
-      <span class="ticker-item">Shanaz Facial <span class="ticker-dot"></span></span>
+  <!-- MEDALLION (signature element) -->
+  <div class="hero-right">
+    <div class="medallion">
+      <div class="medallion-est">Established</div>
+      <div class="medallion-years">30+</div>
+      <div class="medallion-years-label">years of trust</div>
+      <div class="medallion-divider"></div>
+      <div class="medallion-sub">South Richmond Hill, NY<br>Clients from across Queens & Long Island</div>
     </div>
   </div>
 </section>
  
-<!-- HOURS BAR -->
-<div class="hours-bar">
-  <span class="hours-label">Hours</span>
-  <div class="hours-grid">
-    <span class="hours-day"><strong>Mon–Tue</strong> 10AM–7PM</span>
-    <span class="hours-day"><strong>Wed–Thu</strong> 10AM–7PM</span>
-    <span class="hours-day"><strong>Fri</strong> 9AM–7PM</span>
-    <span class="hours-day"><strong>Sat</strong> 9AM–7PM</span>
-    <span class="hours-day"><strong>Sun</strong> 10AM–7PM</span>
+<!-- GOOD FOR STRIP -->
+<div class="good-for">
+  <span class="good-for-label">Great for</span>
+  <div class="good-for-chips">
+    <span class="good-for-chip">Kids</span>
+    <span class="good-for-chip">Curly Hair</span>
+    <span class="good-for-chip">Color & Highlights</span>
+    <span class="good-for-chip">Updos & Bridal</span>
+    <span class="good-for-chip">Walk-ins</span>
+    <span class="good-for-chip">All Hair Types</span>
   </div>
-  <span class="hours-label" style="margin-left:auto;">Restroom Available · Walk-ins Welcome</span>
+  <span class="good-for-hours">Mon–Sat 8:30AM · Closed Wednesdays</span>
 </div>
  
 <!-- SERVICES -->
 <section class="services" id="services">
-  <span class="section-eyebrow">What We Offer</span>
-  <h2 class="section-title reveal">Everything You Need,<br><em>All in One Place</em></h2>
-  <div class="services-list reveal">
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Blowouts</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Braids</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Eyebrow Shaping</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Eyebrow Threading</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Haircut</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Hair Extensions</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Hairstyling</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Massage</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Permanent Makeup</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Perms</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Shampoo & Conditioning</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Tanning</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Waxing</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Color & Balayage</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Shanaz Facial</span></div>
-    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Manicure & Pedicure</span></div>
+  <span class="eyebrow">What we do</span>
+  <h2 class="section-title reveal">Services We're<br>Known For</h2>
+  <div class="services-grid reveal">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 3v12M18 9a3 3 0 11-6 0 3 3 0 016 0zM18 21v-6M6 15a3 3 0 106 0"/></svg>
+      </div>
+      <span class="service-name">Haircut</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      </div>
+      <span class="service-name">Hair Coloring</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+      </div>
+      <span class="service-name">Hair Highlighting</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12c0-4.97 4.03-9 9-9s9 4.03 9 9-4.03 9-9 9"/><path d="M3 12h4M17 12h4M12 3v4M12 17v4"/></svg>
+      </div>
+      <span class="service-name">Blowouts</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8h1a4 4 0 010 8h-1M2 8h16v9a4 4 0 01-4 4H6a4 4 0 01-4-4V8zM6 1v3M10 1v3M14 1v3"/></svg>
+      </div>
+      <span class="service-name">Blowdry</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="5"/><path d="M12 13v8M9 18h6"/></svg>
+      </div>
+      <span class="service-name">Curly Hair</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg>
+      </div>
+      <span class="service-name">Eyebrow Threading</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+      </div>
+      <span class="service-name">Updos & Bridal</span>
+    </div>
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+      </div>
+      <span class="service-name">Bang Trim</span>
+    </div>
   </div>
 </section>
  
-<!-- TEAM -->
-<section class="team" id="team">
-  <span class="section-eyebrow">Our Specialists</span>
-  <h2 class="section-title reveal">The <em>Talent</em><br>Behind the Look</h2>
-  <div class="team-grid">
-    <div class="team-card reveal">
-      <div class="team-initial">S</div>
-      <div class="team-name">Sonia</div>
-      <div class="team-role">Hair Stylist · Color Specialist</div>
-      <p class="team-desc">Sonia executes cuts and balayage to perfection. Friendly, professional, and the kind of stylist clients rave about — and return to again and again.</p>
+<!-- STORY -->
+<section class="story" id="story">
+  <div class="story-text reveal">
+    <span class="story-eyebrow">More than a salon</span>
+    <h2 class="story-title">Where Everyone<br>Feels at Home</h2>
+    <p class="story-body">Lena has been doing hair in South Richmond Hill for over 30 years — and her clients aren't just customers, they're family. Clients travel from Long Island just to sit in her chair. Generations of families trust her with their hair. She remembers exactly how you like it, every single time.</p>
+    <p class="story-body">The salon is always clean, welcoming, and full of good energy. Short notice? Not a problem. Kids? Always welcome. Something special like a prom updo or wedding look? Lena is a master.</p>
+    <div class="story-stats">
+      <div>
+        <div class="stat-num">30+</div>
+        <div class="stat-label">Years Open</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9</div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div>
+        <div class="stat-num">218</div>
+        <div class="stat-label">Reviews</div>
+      </div>
     </div>
-    <div class="team-card reveal">
-      <div class="team-initial">G</div>
-      <div class="team-name">Gillian</div>
-      <div class="team-role">Hairstylist</div>
-      <p class="team-desc">Clients travel from Long Island just for Gillian. Known for incredible washes, cuts, and blowouts that speak for themselves.</p>
+  </div>
+  <div class="story-specialties reveal">
+    <div class="specialty-item">
+      <div class="specialty-dot"></div>
+      <div>
+        <div class="specialty-title">Curly & Damaged Hair</div>
+        <div class="specialty-desc">Lena and her team are especially known for their expertise with curly and damaged hair — clients rave about their results.</div>
+      </div>
     </div>
-    <div class="team-card reveal">
-      <div class="team-initial">I</div>
-      <div class="team-name">Idelmis</div>
-      <div class="team-role">Nail Technician</div>
-      <p class="team-desc">Idelmis brings dedication and artistry to every manicure and pedicure. She makes sure every client leaves exactly as happy as they hoped.</p>
+    <div class="specialty-item">
+      <div class="specialty-dot"></div>
+      <div>
+        <div class="specialty-title">Highlights & Lowlights</div>
+        <div class="specialty-desc">Precise color placement for natural-looking dimension. Clients call the results obsession-worthy.</div>
+      </div>
     </div>
-    <div class="team-card reveal">
-      <div class="team-initial">P</div>
-      <div class="team-name">Pinky</div>
-      <div class="team-role">Brow Artist · Wax Specialist</div>
-      <p class="team-desc">Gentle, precise, and thorough — Pinky's eyebrow and threading work is the kind clients describe as the cleanest and best-shaped they've ever had.</p>
+    <div class="specialty-item">
+      <div class="specialty-dot"></div>
+      <div>
+        <div class="specialty-title">Updos for Every Occasion</div>
+        <div class="specialty-desc">Proms, weddings, sweet sixteens — Lena is a master at occasion styling with short notice no problem.</div>
+      </div>
     </div>
-    <div class="team-card reveal">
-      <div class="team-initial">G</div>
-      <div class="team-name">Gita</div>
-      <div class="team-role">Hairstylist · Brow Artist</div>
-      <p class="team-desc">Gita's layered cuts and brow shaping keep clients coming back. Welcoming, warm, and talented in equal measure.</p>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-initial">G</div>
-      <div class="team-name">Gladys</div>
-      <div class="team-role">Nail Technician</div>
-      <p class="team-desc">Patient, calm, and meticulous — Gladys has built a loyal following who come back every visit for her thorough, beautiful nail work.</p>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-initial">N</div>
-      <div class="team-name">Nina</div>
-      <div class="team-role">Reception · Coordinator</div>
-      <p class="team-desc">Nina makes sure every client feels taken care of from the moment they call. Understanding, caring, and the reason walk-ins feel so welcome.</p>
+    <div class="specialty-item">
+      <div class="specialty-dot"></div>
+      <div>
+        <div class="specialty-title">All Ages & Hair Types</div>
+        <div class="specialty-desc">Kids, adults, seniors — unisex, every texture. The whole family can come in together.</div>
+      </div>
     </div>
   </div>
 </section>
  
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
-  <div class="reviews-header reveal">
+  <div class="reviews-intro reveal">
     <div>
-      <span class="section-eyebrow">Client Love</span>
-      <h2 class="section-title" style="margin-bottom:0">What Our Clients <em>Say</em></h2>
+      <span class="eyebrow">What clients say</span>
+      <h2 class="section-title" style="margin-bottom:0">They Keep<br>Coming Back</h2>
     </div>
-    <div class="reviews-badge">
-      <div class="reviews-badge-num">4.8</div>
-      <div class="reviews-badge-stars">★★★★★</div>
-      <div class="reviews-badge-label">1,100+ Google Reviews</div>
+    <div class="rating-display">
+      <div class="rating-big">4.9</div>
+      <div class="rating-stars-row">★★★★★</div>
+      <div class="rating-count">218 Google Reviews</div>
     </div>
   </div>
-  <div class="reviews-grid reveal">
-    <div class="review-card">
-      <div class="review-top">
-        <div class="review-avatar">O</div>
-        <div>
-          <div class="review-author-name">One Family Divya</div>
-          <div class="review-stars">★★★★★</div>
-        </div>
-      </div>
-      <p class="review-text">Pinky did an absolutely amazing job on my eyebrows and threading. She was so gentle, precise, and really took her time to make sure everything was perfect. My brows have never looked this clean and well-shaped.</p>
-      <span class="review-service-tag">Eyebrow Shaping</span>
-    </div>
-    <div class="review-card">
-      <div class="review-top">
-        <div class="review-avatar">N</div>
-        <div>
-          <div class="review-author-name">Nadira Samaroo · Local Guide</div>
-          <div class="review-stars">★★★★★</div>
-        </div>
-      </div>
-      <p class="review-text">Gillian did an incredible job with my hair. Idelmis also gave me a wonderful pedicure. Both were exceptionally talented and very pleasant to be around. This is now my go-to place whenever I'm visiting New York.</p>
-      <span class="review-service-tag">Hair · Pedicure</span>
-    </div>
-    <div class="review-card">
-      <div class="review-top">
+  <div class="reviews-grid">
+    <div class="review-card reveal">
+      <div class="review-leaf">✦</div>
+      <div class="review-header">
         <div class="review-avatar">A</div>
         <div>
-          <div class="review-author-name">Amreta Singh</div>
+          <div class="review-name">Ashley Khan</div>
           <div class="review-stars">★★★★★</div>
         </div>
       </div>
-      <p class="review-text">I always enjoy my visits here — lovely customer service and amazing hairstyles, especially my favorite Sonia. She never disappoints.</p>
-      <span class="review-service-tag">Hairstyling</span>
+      <p class="review-text">I came in for a full transformation — highlights and lowlights — and I am absolutely obsessed with the results. Lena was super careful with placement. My hair feels healthy and the dimension is incredible. 10/10 service!</p>
+      <span class="review-years">Highlights & Lowlights</span>
     </div>
-    <div class="review-card">
-      <div class="review-top">
-        <div class="review-avatar">G</div>
+    <div class="review-card reveal">
+      <div class="review-leaf">✦</div>
+      <div class="review-header">
+        <div class="review-avatar">A</div>
         <div>
-          <div class="review-author-name">Gursimran Kaur</div>
+          <div class="review-name">Alexsa Ramdass</div>
           <div class="review-stars">★★★★★</div>
         </div>
       </div>
-      <p class="review-text">I called 30 minutes before and Nina got me an appointment right away. The salon is so nice and clean. Gita and Sonia were both welcoming — they took us in with little notice and my cousins loved it.</p>
-      <span class="review-service-tag">Blowouts · Haircut</span>
+      <p class="review-text">I've been coming to Lena's for 29 years and it's the only place I trust with my hair. I travel from Long Island just to go to her salon — that's how good she is. She makes you feel like family and remembers every detail.</p>
+      <span class="review-years">29-Year Client</span>
     </div>
-    <div class="review-card">
-      <div class="review-top">
-        <div class="review-avatar">C</div>
+    <div class="review-card reveal">
+      <div class="review-leaf">✦</div>
+      <div class="review-header">
+        <div class="review-avatar">N</div>
         <div>
-          <div class="review-author-name">Chitrawatie Pokhai</div>
+          <div class="review-name">Nirupa Persaud</div>
           <div class="review-stars">★★★★★</div>
         </div>
       </div>
-      <p class="review-text">Idelmis is very good at what she does. I went for a manicure and pedicure and I absolutely love the way they came out. She made sure I was happy before I left and did my nails exactly how I wanted.</p>
-      <span class="review-service-tag">Manicure · Pedicure</span>
+      <p class="review-text">The absolute best! Been a customer my whole life, never once had any issues. Lena and her team know what they're doing and they actually listen to you. I always feel great sitting in their chair.</p>
+      <span class="review-years">Lifelong Client</span>
     </div>
-    <div class="review-card">
-      <div class="review-top">
+    <div class="review-card reveal">
+      <div class="review-leaf">✦</div>
+      <div class="review-header">
         <div class="review-avatar">M</div>
         <div>
-          <div class="review-author-name">Marlene Farfan</div>
+          <div class="review-name">Michelle Rivera</div>
           <div class="review-stars">★★★★★</div>
         </div>
       </div>
-      <p class="review-text">I've been coming to this place for 10 years. I love how they renewed the place. Gladys does the nails — very patient and calm. She left me perfectly clean, no callous. I brought my daughter too.</p>
-      <span class="review-service-tag">Nails · 10-Year Client</span>
+      <p class="review-text">Lina and her staff have always been highly professional, warm, and knowledgeable about hair care including color treatments. My blowouts are always fantastic. I can't say enough good things! Especially great for curly or damaged hair.</p>
+      <span class="review-years">Blowouts · Curly Hair</span>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-leaf">✦</div>
+      <div class="review-header">
+        <div class="review-avatar">J</div>
+        <div>
+          <div class="review-name">Joanne Valentin</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">Been a customer for over 25 years. My mom, mother-in-law, and kids all go here. Lena is a master at updos for proms, weddings, sweet sixteens. Short notice not a problem. Give this salon a try — you'll keep coming back!</p>
+      <span class="review-years">25+ Years · Whole Family</span>
+    </div>
+    <div class="review-card reveal">
+      <div class="review-leaf">✦</div>
+      <div class="review-header">
+        <div class="review-avatar">R</div>
+        <div>
+          <div class="review-name">Ruh</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">Just got my haircut here and I'm really happy. The stylist was super professional, took the time to understand exactly what I wanted, and matched my reference photo amazingly. Prices are very affordable — great quality for the cost.</p>
+      <span class="review-years">Haircut · Blowout</span>
     </div>
   </div>
 </section>
  
-<!-- VISIT -->
-<section class="visit" id="visit">
-  <div class="visit-info reveal">
-    <span class="section-eyebrow">Find Us</span>
-    <h2 class="section-title">Come See Us<br><em>in South Queens</em></h2>
-    <div class="visit-details">
+<!-- HOURS & MAP -->
+<section class="hours-section" id="hours">
+  <div>
+    <span class="eyebrow">Find us</span>
+    <h2 class="section-title reveal">Hours &<br>Location</h2>
+    <div class="visit-details reveal">
       <div class="visit-row">
-        <div class="visit-row-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        </div>
-        <div>
-          <div class="visit-row-label">Address</div>
-          <div class="visit-row-value">
-            <a href="https://maps.google.com/?q=118-11+Liberty+Ave+South+Richmond+Hill+NY+11419" target="_blank">
-              118-11 Liberty Ave<br>South Richmond Hill, NY 11419
-            </a>
-          </div>
-        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+        <a href="https://maps.google.com/?q=104-11+116th+St+South+Richmond+Hill+NY+11419" target="_blank">104-11 116th St, South Richmond Hill, NY 11419</a>
       </div>
       <div class="visit-row">
-        <div class="visit-row-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.8 19.79 19.79 0 01.98 3.18 2 2 0 012.96 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        </div>
-        <div>
-          <div class="visit-row-label">Phone</div>
-          <div class="visit-row-value"><a href="tel:7183221698">(718) 322-1698</a></div>
-        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.8 19.79 19.79 0 01.98 3.18 2 2 0 012.96 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+        <a href="tel:7188439159">(718) 843-9159</a>
       </div>
       <div class="visit-row">
-        <div class="visit-row-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        </div>
-        <div>
-          <div class="visit-row-label">Hours</div>
-          <div class="visit-row-value">Mon–Thu 10AM–7PM · Fri–Sat 9AM–7PM · Sun 10AM–7PM</div>
-        </div>
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+        <span>All ages & hair types welcome · Good for kids</span>
       </div>
-      <div class="visit-row">
-        <div class="visit-row-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
-        </div>
-        <div>
-          <div class="visit-row-label">Walk-ins</div>
-          <div class="visit-row-value">Walk-ins accepted · Appointments available</div>
-        </div>
+    </div>
+    <div class="hours-grid reveal" style="margin-top:2rem;">
+      <div class="hours-row">
+        <span class="hours-day">Monday</span>
+        <span class="hours-time">8:30 AM – 6:30 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Tuesday</span>
+        <span class="hours-time">8:30 AM – 6:30 PM</span>
+      </div>
+      <div class="hours-row closed">
+        <span class="hours-day">Wednesday</span>
+        <span class="hours-badge-closed">Closed</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Thursday</span>
+        <span class="hours-time">8:30 AM – 6:30 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Friday</span>
+        <span class="hours-time">8:30 AM – 6:30 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Saturday</span>
+        <span class="hours-time">8:30 AM – 6:30 PM</span>
+      </div>
+      <div class="hours-row">
+        <span class="hours-day">Sunday</span>
+        <span class="hours-time">8:30 AM – 5:00 PM</span>
       </div>
     </div>
   </div>
-  <div class="visit-map reveal">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.8!2d-73.8252!3d40.6930!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2674ecc2a8edb%3A0x8316d76ff15bdccf!2sGlamour%20Hair%20Concept!5e0!3m2!1sen!2sus!4v1700000000001"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="Glamour Hair Concept location">
-    </iframe>
-    <div class="visit-map-overlay"></div>
+  <div>
+    <div style="height:2rem;"></div>
+    <div class="visit-map reveal">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.8!2d-73.8268!3d40.6928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26795bbe32a03%3A0x3b7906b1d2a56a21!2sLena's%20Unisex!5e0!3m2!1sen!2sus!4v1700000000002"
+        allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"
+        title="Lena's Unisex location">
+      </iframe>
+    </div>
   </div>
 </section>
  
-<!-- BOOK BAR -->
-<div class="book-bar">
-  <span class="book-bar-text">Ready for your next look?</span>
-  <a href="tel:7183221698" class="btn-white">Call (718) 322-1698</a>
+<!-- CTA -->
+<div class="cta-banner">
+  <div class="cta-script">Ready for a fresh look?</div>
+  <h2 class="cta-title">Give Us a Call</h2>
+  <a href="tel:7188439159" class="cta-phone">(718) 843-9159</a>
 </div>
  
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Glamour<span>.</span> Hair Concept</div>
+  <div class="footer-logo">Lena's Unisex</div>
   <ul class="footer-nav">
     <li><a href="#services">Services</a></li>
-    <li><a href="#team">Team</a></li>
+    <li><a href="#story">Our Story</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#visit">Visit</a></li>
+    <li><a href="#hours">Hours</a></li>
   </ul>
-  <div class="footer-copy">© 2025 Glamour Hair Concept Inc · South Richmond Hill, NY</div>
+  <div class="footer-copy">© 2025 Lena's Unisex · South Richmond Hill, NY</div>
 </footer>
  
 <script>
@@ -917,13 +1059,12 @@
         obs.unobserve(el.target);
       }
     });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  }, { threshold: 0.08 });
   reveals.forEach((el, i) => {
-    el.style.transitionDelay = `${(i % 4) * 0.07}s`;
+    el.style.transitionDelay = `${(i % 3) * 0.08}s`;
     obs.observe(el);
   });
 </script>
- 
 </body>
 </html>
  
