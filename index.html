@@ -3,879 +3,927 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Roots Hair Concept — South Richmond Hill, NY</title>
+<title>Glamour Hair Concept — South Richmond Hill, NY</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
+ 
   :root {
-    --plum: #2D1B2E;
-    --gold: #C9A84C;
-    --gold-light: #E8C96A;
-    --blush: #F2D9D0;
-    --cream: #FAF7F4;
-    --charcoal: #1A1A1A;
-    --mid: #6B4F5A;
-    --f-display: 'Cormorant Garamond', Georgia, serif;
-    --f-body: 'DM Sans', system-ui, sans-serif;
+    --black: #0A0A0A;
+    --white: #FAFAFA;
+    --rose: #E8245C;
+    --rose-dark: #C01A4A;
+    --gray: #888;
+    --light: #F2F2F2;
+    --border: rgba(10,10,10,0.1);
+    --f-display: 'Playfair Display', Georgia, serif;
+    --f-body: 'Inter', system-ui, sans-serif;
   }
-
+ 
   html { scroll-behavior: smooth; }
-
+ 
   body {
-    background: var(--cream);
-    color: var(--charcoal);
+    background: var(--white);
+    color: var(--black);
     font-family: var(--f-body);
     font-weight: 300;
     line-height: 1.6;
     overflow-x: hidden;
   }
-
+ 
   /* ── NAV ── */
   nav {
     position: fixed; top: 0; left: 0; right: 0; z-index: 100;
     display: flex; align-items: center; justify-content: space-between;
-    padding: 1.2rem 3rem;
-    background: rgba(45, 27, 46, 0.96);
-    backdrop-filter: blur(8px);
+    padding: 1.1rem 4rem;
+    background: rgba(10,10,10,0.97);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255,255,255,0.06);
   }
   .nav-logo {
     font-family: var(--f-display);
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--gold);
-    letter-spacing: 0.08em;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
+  .nav-logo span { color: var(--rose); }
   .nav-links {
-    display: flex; gap: 2.5rem; list-style: none;
+    display: flex; gap: 2.5rem; list-style: none; align-items: center;
   }
   .nav-links a {
-    color: var(--blush);
+    color: rgba(250,250,250,0.6);
     text-decoration: none;
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 500;
     transition: color 0.2s;
   }
-  .nav-links a:hover { color: var(--gold); }
-
+  .nav-links a:hover { color: var(--white); }
+  .nav-cta {
+    background: var(--rose) !important;
+    color: var(--white) !important;
+    padding: 0.55rem 1.3rem;
+    border-radius: 0;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--rose-dark) !important; }
+ 
   /* ── HERO ── */
   .hero {
     min-height: 100vh;
-    background: var(--plum);
-    display: grid;
-    grid-template-columns: 1fr 340px;
-    align-items: center;
-    position: relative;
-    overflow: hidden;
-    padding-top: 72px;
-  }
-
-  .hero-content {
-    padding: 5rem 4rem 5rem 5rem;
-    position: relative; z-index: 2;
-  }
-
-  .hero-eyebrow {
-    display: inline-flex; align-items: center; gap: 0.75rem;
-    font-size: 0.72rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 2rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: block; width: 32px; height: 1px;
-    background: var(--gold);
-  }
-
-  .hero-title {
-    font-family: var(--f-display);
-    font-size: clamp(3.5rem, 7vw, 6.5rem);
-    font-weight: 300;
-    line-height: 1.0;
-    color: var(--cream);
-    margin-bottom: 0.2em;
-  }
-  .hero-title em {
-    font-style: italic;
-    color: var(--gold);
-  }
-
-  .hero-subtitle {
-    font-family: var(--f-display);
-    font-size: clamp(1.1rem, 2vw, 1.5rem);
-    font-weight: 300;
-    color: var(--blush);
-    opacity: 0.75;
-    margin-bottom: 2.5rem;
-    letter-spacing: 0.03em;
-  }
-
-  .hero-rating {
-    display: inline-flex; align-items: center; gap: 0.6rem;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 40px;
-    padding: 0.5rem 1.2rem;
-    margin-bottom: 2.5rem;
-  }
-  .stars { color: var(--gold); font-size: 0.9rem; letter-spacing: 0.05em; }
-  .rating-text {
-    color: var(--cream); font-size: 0.82rem; font-weight: 400;
-  }
-
-  .hero-ctas {
-    display: flex; gap: 1rem; flex-wrap: wrap;
-    margin-bottom: 3.5rem;
-  }
-  .btn-primary {
-    background: var(--gold);
-    color: var(--plum);
-    padding: 0.9rem 2rem;
-    border: none; border-radius: 2px;
-    font-family: var(--f-body);
-    font-size: 0.8rem;
-    font-weight: 500;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: background 0.2s;
-  }
-  .btn-primary:hover { background: var(--gold-light); }
-  .btn-outline {
-    background: transparent;
-    color: var(--cream);
-    padding: 0.9rem 2rem;
-    border: 1px solid rgba(250,247,244,0.3);
-    border-radius: 2px;
-    font-family: var(--f-body);
-    font-size: 0.8rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    text-decoration: none;
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-  }
-  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
-
-  .hero-info {
-    display: flex; flex-direction: column; gap: 0.5rem;
-  }
-  .hero-info-item {
-    display: flex; align-items: center; gap: 0.6rem;
-    color: var(--blush); opacity: 0.7;
-    font-size: 0.82rem;
-  }
-  .hero-info-item svg { flex-shrink: 0; }
-
-  /* ── MARQUEE RIBBON ── */
-  .marquee-col {
-    height: 100vh;
-    overflow: hidden;
-    position: relative;
-    border-left: 1px solid rgba(201,168,76,0.2);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .marquee-track {
+    background: var(--black);
     display: flex;
     flex-direction: column;
-    gap: 0;
-    animation: scrollUp 22s linear infinite;
-    white-space: nowrap;
+    justify-content: flex-end;
+    padding: 0;
+    position: relative;
+    overflow: hidden;
   }
-  .marquee-track:hover { animation-play-state: paused; }
-  @keyframes scrollUp {
-    from { transform: translateY(0); }
-    to { transform: translateY(-50%); }
+ 
+  /* Animated diagonal lines — the signature background element */
+  .hero-bg {
+    position: absolute; inset: 0;
+    background:
+      repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 60px,
+        rgba(232,36,92,0.03) 60px,
+        rgba(232,36,92,0.03) 61px
+      );
   }
-  .marquee-item {
-    padding: 1.1rem 2rem;
-    font-family: var(--f-display);
-    font-size: 0.85rem;
-    font-weight: 400;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--blush);
-    opacity: 0.5;
-    border-bottom: 1px solid rgba(201,168,76,0.1);
-    transition: opacity 0.2s, color 0.2s;
+ 
+  .hero-top {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    padding: 10rem 4rem 4rem;
+    position: relative; z-index: 2;
   }
-  .marquee-item:nth-child(4n+1) { color: var(--gold); opacity: 0.8; }
-  .marquee-item:nth-child(4n+2) { opacity: 0.4; }
-
-  /* ── ABOUT STRIP ── */
-  .about-strip {
-    background: var(--gold);
-    padding: 1.5rem 5rem;
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 2rem; flex-wrap: wrap;
-  }
-  .about-strip-text {
-    font-family: var(--f-display);
-    font-size: 1.3rem;
-    font-style: italic;
-    color: var(--plum);
-    font-weight: 300;
-  }
-  .about-strip-detail {
-    font-size: 0.78rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--plum);
-    font-weight: 500;
-  }
-
-  /* ── SERVICES ── */
-  .services {
-    background: var(--cream);
-    padding: 7rem 5rem;
-  }
-  .section-header {
-    display: flex; align-items: flex-end; justify-content: space-between;
-    margin-bottom: 4rem; flex-wrap: wrap; gap: 1rem;
-  }
-  .section-label {
-    display: block;
+ 
+  .hero-content { max-width: 800px; }
+ 
+  .hero-tag {
+    display: inline-flex; align-items: center; gap: 0.6rem;
+    margin-bottom: 2rem;
     font-size: 0.7rem;
     letter-spacing: 0.2em;
     text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 0.75rem;
+    color: var(--rose);
+    font-weight: 600;
+  }
+  .hero-tag::after {
+    content: '';
+    display: block;
+    width: 40px; height: 1px;
+    background: var(--rose);
+  }
+ 
+  .hero-title {
+    font-family: var(--f-display);
+    font-size: clamp(4rem, 9vw, 8.5rem);
+    font-weight: 900;
+    line-height: 0.92;
+    color: var(--white);
+    text-transform: uppercase;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.15em;
+  }
+  .hero-title-italic {
+    font-style: italic;
+    font-weight: 400;
+    color: var(--rose);
+    display: block;
+    font-size: 0.85em;
+    letter-spacing: 0;
+  }
+ 
+  .hero-sub {
+    margin-top: 2rem;
+    display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
+  }
+  .hero-desc {
+    color: rgba(250,250,250,0.45);
+    font-size: 0.9rem;
+    max-width: 320px;
+    line-height: 1.7;
+  }
+  .hero-rating-block {
+    display: flex; flex-direction: column; gap: 0.25rem;
+    border-left: 2px solid var(--rose);
+    padding-left: 1.2rem;
+  }
+  .hero-rating-num {
+    font-family: var(--f-display);
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: var(--white);
+    line-height: 1;
+  }
+  .hero-rating-stars { color: var(--rose); font-size: 0.85rem; }
+  .hero-rating-label {
+    color: rgba(250,250,250,0.4);
+    font-size: 0.7rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+ 
+  /* ── TICKER STRIP ── */
+  .ticker {
+    background: var(--rose);
+    padding: 0.75rem 0;
+    overflow: hidden;
+    position: relative; z-index: 2;
+  }
+  .ticker-track {
+    display: flex;
+    gap: 0;
+    animation: tickerScroll 25s linear infinite;
+    white-space: nowrap;
+  }
+  @keyframes tickerScroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .ticker-item {
+    display: inline-flex; align-items: center; gap: 1.2rem;
+    padding: 0 2rem;
+    font-size: 0.72rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .ticker-dot {
+    width: 4px; height: 4px;
+    background: rgba(255,255,255,0.4);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+ 
+  @media (prefers-reduced-motion: reduce) {
+    .ticker-track { animation: none; }
+  }
+ 
+  /* ── HOURS BAR ── */
+  .hours-bar {
+    background: var(--light);
+    border-bottom: 1px solid var(--border);
+    padding: 1rem 4rem;
+    display: flex; align-items: center; gap: 3rem; flex-wrap: wrap;
+  }
+  .hours-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gray);
+  }
+  .hours-grid {
+    display: flex; gap: 2rem; flex-wrap: wrap;
+  }
+  .hours-day {
+    font-size: 0.78rem;
+    color: var(--black);
+    font-weight: 400;
+  }
+  .hours-day strong { font-weight: 600; }
+ 
+  /* ── SERVICES ── */
+  .services {
+    padding: 7rem 4rem;
+    background: var(--white);
+  }
+  .section-eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--rose);
+    display: block;
+    margin-bottom: 1rem;
   }
   .section-title {
     font-family: var(--f-display);
-    font-size: clamp(2.2rem, 4vw, 3.5rem);
-    font-weight: 300;
-    color: var(--plum);
-    line-height: 1.1;
+    font-size: clamp(2rem, 4vw, 3.5rem);
+    font-weight: 700;
+    line-height: 1.05;
+    color: var(--black);
+    margin-bottom: 3.5rem;
   }
-  .section-title em { font-style: italic; }
-
-  .services-grid {
+  .section-title em { font-style: italic; font-weight: 400; }
+ 
+  .services-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1px;
-    background: rgba(45,27,46,0.08);
-    border: 1px solid rgba(45,27,46,0.08);
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    border-top: 2px solid var(--black);
   }
-  .service-card {
-    background: var(--cream);
-    padding: 1.8rem 1.5rem;
+  .service-item {
+    border-bottom: 1px solid var(--border);
+    border-right: 1px solid var(--border);
+    padding: 1.5rem 1.8rem;
+    display: flex; align-items: center; gap: 0.75rem;
     transition: background 0.2s;
     cursor: default;
-    position: relative;
   }
-  .service-card::after {
-    content: '';
-    position: absolute; bottom: 0; left: 1.5rem;
-    width: 0; height: 2px;
-    background: var(--gold);
-    transition: width 0.3s ease;
+  .service-item:hover { background: var(--black); color: var(--white); }
+  .service-item:hover .service-arrow { color: var(--rose); }
+  .service-arrow {
+    color: var(--rose);
+    font-size: 0.7rem;
+    transition: color 0.2s;
+    flex-shrink: 0;
   }
-  .service-card:hover { background: var(--blush); }
-  .service-card:hover::after { width: calc(100% - 3rem); }
   .service-name {
     font-size: 0.85rem;
-    font-weight: 400;
-    color: var(--plum);
+    font-weight: 500;
     letter-spacing: 0.02em;
   }
-
-  /* ── STYLISTS ── */
+ 
+  /* ── TEAM ── */
   .team {
-    background: var(--plum);
-    padding: 7rem 5rem;
+    background: var(--black);
+    padding: 7rem 4rem;
   }
-  .team .section-title { color: var(--cream); }
-  .team .section-label { color: var(--gold); }
-
+  .team .section-title { color: var(--white); }
+ 
   .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-    gap: 2rem;
-    margin-top: 3.5rem;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1px;
+    background: rgba(255,255,255,0.07);
+    margin-top: 0;
+    border: 1px solid rgba(255,255,255,0.07);
   }
   .team-card {
-    background: rgba(250,247,244,0.05);
-    border: 1px solid rgba(201,168,76,0.15);
-    padding: 2rem;
-    border-radius: 2px;
-    transition: background 0.2s, border-color 0.2s;
+    background: var(--black);
+    padding: 2.5rem 2rem;
+    transition: background 0.25s;
+    position: relative;
   }
-  .team-card:hover {
-    background: rgba(201,168,76,0.08);
-    border-color: rgba(201,168,76,0.4);
+  .team-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--rose);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
   }
+  .team-card:hover { background: #111; }
+  .team-card:hover::before { transform: scaleX(1); }
+ 
   .team-initial {
-    width: 56px; height: 56px;
-    background: var(--gold);
-    color: var(--plum);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
     font-family: var(--f-display);
-    font-size: 1.5rem;
-    font-weight: 400;
-    margin-bottom: 1.2rem;
+    font-size: 3.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: rgba(255,255,255,0.08);
+    margin-bottom: 0.75rem;
+    letter-spacing: -0.02em;
   }
   .team-name {
     font-family: var(--f-display);
-    font-size: 1.3rem;
-    font-weight: 400;
-    color: var(--cream);
-    margin-bottom: 0.4rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--white);
+    margin-bottom: 0.3rem;
   }
-  .team-specialty {
-    font-size: 0.78rem;
-    letter-spacing: 0.08em;
+  .team-role {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 400;
+    color: var(--rose);
+    font-weight: 600;
     margin-bottom: 1rem;
   }
   .team-desc {
-    font-size: 0.83rem;
-    color: var(--blush);
-    opacity: 0.7;
-    line-height: 1.65;
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.45);
+    line-height: 1.7;
   }
-
+ 
   /* ── REVIEWS ── */
   .reviews {
-    background: var(--cream);
-    padding: 7rem 5rem;
+    background: var(--white);
+    padding: 7rem 4rem;
   }
-  .reviews-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-    margin-top: 3.5rem;
+  .reviews-header {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    margin-bottom: 4rem; flex-wrap: wrap; gap: 2rem;
   }
-  .review-card {
-    background: white;
-    border-top: 3px solid var(--gold);
-    padding: 2rem;
-    position: relative;
+  .reviews-badge {
+    background: var(--black);
+    color: var(--white);
+    padding: 1.5rem 2rem;
+    display: flex; flex-direction: column; align-items: flex-end; gap: 0.3rem;
   }
-  .review-quote-mark {
+  .reviews-badge-num {
     font-family: var(--f-display);
-    font-size: 5rem;
-    line-height: 0.6;
-    color: var(--gold);
-    opacity: 0.2;
-    position: absolute;
-    top: 1.5rem; right: 1.5rem;
-    font-style: italic;
-    pointer-events: none;
+    font-size: 2.5rem;
+    font-weight: 900;
+    line-height: 1;
+    color: var(--rose);
   }
-  .review-text {
-    font-family: var(--f-display);
-    font-size: 1rem;
-    font-style: italic;
-    color: var(--mid);
-    line-height: 1.7;
-    margin-bottom: 1.5rem;
-  }
-  .review-author {
-    font-size: 0.78rem;
-    font-weight: 500;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--plum);
-    margin-bottom: 0.2rem;
-  }
-  .review-stars {
-    color: var(--gold); font-size: 0.8rem;
-  }
-  .review-service {
-    display: inline-block;
-    margin-top: 0.75rem;
-    font-size: 0.7rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--mid);
-    opacity: 0.6;
-    font-weight: 400;
-  }
-
-  /* ── MAP / VISIT ── */
-  .visit {
-    background: var(--plum);
-    padding: 7rem 5rem;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 5rem;
-    align-items: center;
-  }
-  .visit-info .section-title { color: var(--cream); }
-  .visit-info .section-label { color: var(--gold); }
-
-  .visit-details {
-    margin-top: 2.5rem;
-    display: flex; flex-direction: column; gap: 1.5rem;
-  }
-  .visit-detail-item {
-    display: flex; gap: 1rem; align-items: flex-start;
-  }
-  .visit-icon {
-    width: 36px; height: 36px;
-    background: rgba(201,168,76,0.12);
-    border: 1px solid rgba(201,168,76,0.3);
-    border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    flex-shrink: 0; margin-top: 0.1rem;
-  }
-  .visit-detail-label {
-    font-size: 0.7rem;
+  .reviews-badge-stars { color: var(--rose); font-size: 1rem; }
+  .reviews-badge-label {
+    font-size: 0.68rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--gold);
-    font-weight: 500;
-    margin-bottom: 0.25rem;
+    color: rgba(255,255,255,0.5);
   }
-  .visit-detail-value {
-    color: var(--blush);
+ 
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+    border: 1px solid var(--border);
+  }
+  .review-card {
+    padding: 2rem;
+    border-right: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    transition: background 0.2s;
+  }
+  .review-card:hover { background: var(--light); }
+  .review-card:nth-child(3n) { border-right: none; }
+  .review-top {
+    display: flex; align-items: center; gap: 0.75rem;
+    margin-bottom: 1.2rem;
+  }
+  .review-avatar {
+    width: 38px; height: 38px;
+    background: var(--rose);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--f-display);
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--white);
+    flex-shrink: 0;
+  }
+  .review-author-name {
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--black);
+    margin-bottom: 0.1rem;
+  }
+  .review-stars { color: var(--rose); font-size: 0.7rem; }
+  .review-text {
+    font-size: 0.85rem;
+    color: #444;
+    line-height: 1.75;
+    font-style: italic;
+  }
+  .review-service-tag {
+    display: inline-block;
+    margin-top: 1rem;
+    font-size: 0.65rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--rose);
+  }
+ 
+  /* ── VISIT ── */
+  .visit {
+    background: var(--light);
+    padding: 7rem 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1.2fr;
+    gap: 6rem;
+    align-items: center;
+  }
+  .visit .section-title { margin-bottom: 2rem; }
+ 
+  .visit-details {
+    display: flex; flex-direction: column; gap: 0;
+  }
+  .visit-row {
+    display: flex; align-items: flex-start; gap: 1.5rem;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .visit-row:first-child { border-top: 1px solid var(--border); }
+  .visit-row-icon {
+    width: 40px; height: 40px;
+    background: var(--black);
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+  .visit-row-label {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: var(--gray);
+    margin-bottom: 0.3rem;
+  }
+  .visit-row-value {
     font-size: 0.9rem;
+    color: var(--black);
     line-height: 1.6;
-    opacity: 0.85;
+    font-weight: 400;
   }
-  .visit-detail-value a {
-    color: var(--blush);
-    text-decoration: none;
-    opacity: 0.85;
-  }
-  .visit-detail-value a:hover { color: var(--gold); opacity: 1; }
-
+  .visit-row-value a { color: var(--black); text-decoration: none; }
+  .visit-row-value a:hover { color: var(--rose); }
+ 
   .visit-map {
-    border-radius: 2px;
+    height: 460px;
     overflow: hidden;
-    border: 1px solid rgba(201,168,76,0.2);
-    height: 380px;
+    position: relative;
   }
   .visit-map iframe {
     width: 100%; height: 100%; border: 0;
-    filter: grayscale(30%) sepia(15%);
+    filter: grayscale(100%) contrast(1.1);
+    transition: filter 0.4s;
   }
-
+  .visit-map:hover iframe { filter: grayscale(0%) contrast(1); }
+  .visit-map-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(to top, rgba(10,10,10,0.7) 0%, transparent 100%);
+    height: 80px;
+    pointer-events: none;
+  }
+ 
+  .book-bar {
+    background: var(--rose);
+    padding: 2.5rem 4rem;
+    display: flex; align-items: center; justify-content: space-between;
+    flex-wrap: wrap; gap: 2rem;
+  }
+  .book-bar-text {
+    font-family: var(--f-display);
+    font-size: 1.8rem;
+    font-style: italic;
+    font-weight: 400;
+    color: var(--white);
+  }
+  .btn-white {
+    background: var(--white);
+    color: var(--rose);
+    padding: 1rem 2.5rem;
+    border: none; border-radius: 0;
+    font-family: var(--f-body);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    flex-shrink: 0;
+  }
+  .btn-white:hover { background: var(--black); color: var(--white); }
+ 
   /* ── FOOTER ── */
   footer {
-    background: var(--charcoal);
-    padding: 2.5rem 5rem;
+    background: var(--black);
+    padding: 2rem 4rem;
     display: flex; align-items: center; justify-content: space-between;
     flex-wrap: wrap; gap: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.06);
   }
   .footer-logo {
     font-family: var(--f-display);
-    font-size: 1rem;
-    font-weight: 400;
-    color: var(--gold);
-    letter-spacing: 0.1em;
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--white);
+    letter-spacing: 0.04em;
     text-transform: uppercase;
   }
-  .footer-copy {
-    font-size: 0.75rem;
-    color: rgba(250,247,244,0.35);
-    letter-spacing: 0.05em;
+  .footer-logo span { color: var(--rose); }
+  .footer-nav {
+    display: flex; gap: 2rem; list-style: none;
   }
-  .footer-links {
-    display: flex; gap: 1.5rem; list-style: none;
-  }
-  .footer-links a {
-    color: rgba(250,247,244,0.4);
+  .footer-nav a {
+    color: rgba(255,255,255,0.3);
     text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.08em;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
     transition: color 0.2s;
   }
-  .footer-links a:hover { color: var(--gold); }
-
-  /* ── RESPONSIVE ── */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.5rem; }
-    .hero { grid-template-columns: 1fr; }
-    .marquee-col { display: none; }
-    .hero-content { padding: 4rem 2rem 3rem; }
-    .about-strip { padding: 1.5rem 2rem; }
-    .services, .team, .reviews { padding: 4rem 2rem; }
-    .visit { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
-    .visit-map { height: 260px; }
-    footer { padding: 2rem 2rem; }
+  .footer-nav a:hover { color: var(--rose); }
+  .footer-copy {
+    color: rgba(255,255,255,0.2);
+    font-size: 0.72rem;
+    letter-spacing: 0.05em;
   }
-  @media (max-width: 600px) {
-    .nav-links { display: none; }
-    .hero-title { font-size: 3rem; }
-    .hero-ctas { flex-direction: column; }
-    .btn-primary, .btn-outline { text-align: center; }
-  }
-
-  /* ── SCROLL REVEALS ── */
+ 
+  /* ── REVEALS ── */
   .reveal {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    opacity: 0; transform: translateY(20px);
+    transition: opacity 0.55s ease, transform 0.55s ease;
   }
-  .reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+ 
+  /* ── RESPONSIVE ── */
+  @media (max-width: 960px) {
+    nav { padding: 1rem 1.5rem; }
+    .nav-links { display: none; }
+    .hero-top { padding: 8rem 2rem 3rem; }
+    .hours-bar { padding: 1rem 2rem; }
+    .services, .reviews, .team { padding: 4rem 2rem; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-card { border-right: none; }
+    .visit { grid-template-columns: 1fr; padding: 4rem 2rem; gap: 3rem; }
+    .visit-map { height: 280px; }
+    .book-bar { padding: 2rem; }
+    footer { padding: 1.5rem 2rem; }
   }
-
+ 
   @media (prefers-reduced-motion: reduce) {
-    .marquee-track { animation: none; }
     .reveal { opacity: 1; transform: none; }
   }
 </style>
 </head>
 <body>
-
+ 
 <!-- NAV -->
 <nav>
-  <div class="nav-logo">Roots Hair Concept</div>
+  <div class="nav-logo">Glamour<span>.</span></div>
   <ul class="nav-links">
     <li><a href="#services">Services</a></li>
-    <li><a href="#team">Our Team</a></li>
+    <li><a href="#team">Team</a></li>
     <li><a href="#reviews">Reviews</a></li>
-    <li><a href="#visit">Visit Us</a></li>
-    <li><a href="tel:7188802154" class="btn-primary" style="padding:0.5rem 1.2rem; border-radius:2px;">Call Now</a></li>
+    <li><a href="#visit">Visit</a></li>
+    <li><a href="tel:7183221698" class="nav-cta">Call Now</a></li>
   </ul>
 </nav>
-
+ 
 <!-- HERO -->
 <section class="hero">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Full Service Salon · South Richmond Hill, NY</div>
-    <h1 class="hero-title">
-      Where Every<br>
-      <em>Root Tells</em><br>
-      a Story
-    </h1>
-    <p class="hero-subtitle">Hair, nails, wax & beauty — all in one place</p>
-
-    <div class="hero-rating">
-      <span class="stars">★★★★★</span>
-      <span class="rating-text">4.8 stars · 1,000+ reviews on Google</span>
-    </div>
-
-    <div class="hero-ctas">
-      <a href="tel:7188802154" class="btn-primary">Book Appointment</a>
-      <a href="#services" class="btn-outline">Explore Services</a>
-    </div>
-
-    <div class="hero-info">
-      <div class="hero-info-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
-        121-19 Liberty Ave, South Richmond Hill, NY 11419
-      </div>
-      <div class="hero-info-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.8 19.79 19.79 0 01.98 3.18 2 2 0 012.96 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
-        (718) 880-2154
-      </div>
-      <div class="hero-info-item">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-        Walk-ins welcome
+  <div class="hero-bg"></div>
+  <div class="hero-top">
+    <div class="hero-content">
+      <div class="hero-tag">Full Service Salon · South Richmond Hill, NY</div>
+      <h1 class="hero-title">
+        Feel
+        <span class="hero-title-italic">Glamorous</span>
+        Every Day
+      </h1>
+      <div class="hero-sub">
+        <p class="hero-desc">Hair, nails, wax, tanning, permanent makeup and more — South Queens' destination for beauty since day one.</p>
+        <div class="hero-rating-block">
+          <div class="hero-rating-num">4.8</div>
+          <div class="hero-rating-stars">★★★★★</div>
+          <div class="hero-rating-label">1,100+ Google Reviews</div>
+        </div>
       </div>
     </div>
   </div>
-
-  <!-- MARQUEE -->
-  <div class="marquee-col">
-    <div class="marquee-track" id="marqueeTrack">
-      <!-- Items duplicated for seamless loop -->
-      <div class="marquee-item">Acrylic Nails</div>
-      <div class="marquee-item">Blowouts</div>
-      <div class="marquee-item">Body Waxing</div>
-      <div class="marquee-item">Braids</div>
-      <div class="marquee-item">Brazilian Wax</div>
-      <div class="marquee-item">Bridal Services</div>
-      <div class="marquee-item">Eyebrow Shaping</div>
-      <div class="marquee-item">Threading</div>
-      <div class="marquee-item">Hair Extensions</div>
-      <div class="marquee-item">Haircut</div>
-      <div class="marquee-item">Hairstyling</div>
-      <div class="marquee-item">Makeup</div>
-      <div class="marquee-item">Manicure</div>
-      <div class="marquee-item">Massage</div>
-      <div class="marquee-item">Pedicure</div>
-      <div class="marquee-item">Perms</div>
-      <div class="marquee-item">Shampoo & Conditioning</div>
-      <div class="marquee-item">Balayage</div>
-      <div class="marquee-item">Color & Highlights</div>
-      <div class="marquee-item">Acrylic Nails</div>
-      <div class="marquee-item">Blowouts</div>
-      <div class="marquee-item">Body Waxing</div>
-      <div class="marquee-item">Braids</div>
-      <div class="marquee-item">Brazilian Wax</div>
-      <div class="marquee-item">Bridal Services</div>
-      <div class="marquee-item">Eyebrow Shaping</div>
-      <div class="marquee-item">Threading</div>
-      <div class="marquee-item">Hair Extensions</div>
-      <div class="marquee-item">Haircut</div>
-      <div class="marquee-item">Hairstyling</div>
-      <div class="marquee-item">Makeup</div>
-      <div class="marquee-item">Manicure</div>
-      <div class="marquee-item">Massage</div>
-      <div class="marquee-item">Pedicure</div>
-      <div class="marquee-item">Perms</div>
-      <div class="marquee-item">Shampoo & Conditioning</div>
-      <div class="marquee-item">Balayage</div>
-      <div class="marquee-item">Color & Highlights</div>
+ 
+  <!-- TICKER -->
+  <div class="ticker">
+    <div class="ticker-track">
+      <span class="ticker-item">Blowouts <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Braids <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Eyebrow Shaping <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Threading <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Haircut <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Hair Extensions <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Hairstyling <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Massage <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Permanent Makeup <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Perms <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Tanning <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Waxing <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Shampoo & Conditioning <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Balayage <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Shanaz Facial <span class="ticker-dot"></span></span>
+      <!-- duplicate for seamless loop -->
+      <span class="ticker-item">Blowouts <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Braids <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Eyebrow Shaping <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Threading <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Haircut <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Hair Extensions <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Hairstyling <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Massage <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Permanent Makeup <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Perms <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Tanning <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Waxing <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Shampoo & Conditioning <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Balayage <span class="ticker-dot"></span></span>
+      <span class="ticker-item">Shanaz Facial <span class="ticker-dot"></span></span>
     </div>
   </div>
 </section>
-
-<!-- ABOUT STRIP -->
-<div class="about-strip">
-  <span class="about-strip-text">"A full-service salon with heart — where every client leaves looking and feeling their best."</span>
-  <span class="about-strip-detail">Walk-ins Welcome · Restroom Available · South Queens, NY</span>
+ 
+<!-- HOURS BAR -->
+<div class="hours-bar">
+  <span class="hours-label">Hours</span>
+  <div class="hours-grid">
+    <span class="hours-day"><strong>Mon–Tue</strong> 10AM–7PM</span>
+    <span class="hours-day"><strong>Wed–Thu</strong> 10AM–7PM</span>
+    <span class="hours-day"><strong>Fri</strong> 9AM–7PM</span>
+    <span class="hours-day"><strong>Sat</strong> 9AM–7PM</span>
+    <span class="hours-day"><strong>Sun</strong> 10AM–7PM</span>
+  </div>
+  <span class="hours-label" style="margin-left:auto;">Restroom Available · Walk-ins Welcome</span>
 </div>
-
+ 
 <!-- SERVICES -->
 <section class="services" id="services">
-  <div class="section-header reveal">
-    <div>
-      <span class="section-label">What We Offer</span>
-      <h2 class="section-title">Every Service,<br><em>Under One Roof</em></h2>
-    </div>
-  </div>
-  <div class="services-grid reveal">
-    <div class="service-card"><span class="service-name">Acrylic Nails</span></div>
-    <div class="service-card"><span class="service-name">Blowouts</span></div>
-    <div class="service-card"><span class="service-name">Body Waxing</span></div>
-    <div class="service-card"><span class="service-name">Braids</span></div>
-    <div class="service-card"><span class="service-name">Brazilian Waxing</span></div>
-    <div class="service-card"><span class="service-name">Bridal Services</span></div>
-    <div class="service-card"><span class="service-name">Eyebrow Shaping</span></div>
-    <div class="service-card"><span class="service-name">Eyebrow Threading</span></div>
-    <div class="service-card"><span class="service-name">Hair Extensions</span></div>
-    <div class="service-card"><span class="service-name">Hair Threading</span></div>
-    <div class="service-card"><span class="service-name">Haircut</span></div>
-    <div class="service-card"><span class="service-name">Hairstyling</span></div>
-    <div class="service-card"><span class="service-name">Makeup Services</span></div>
-    <div class="service-card"><span class="service-name">Manicure</span></div>
-    <div class="service-card"><span class="service-name">Massage</span></div>
-    <div class="service-card"><span class="service-name">Pedicure</span></div>
-    <div class="service-card"><span class="service-name">Perms</span></div>
-    <div class="service-card"><span class="service-name">Shampoo & Conditioning</span></div>
-    <div class="service-card"><span class="service-name">Color & Balayage</span></div>
-    <div class="service-card"><span class="service-name">Waxing</span></div>
+  <span class="section-eyebrow">What We Offer</span>
+  <h2 class="section-title reveal">Everything You Need,<br><em>All in One Place</em></h2>
+  <div class="services-list reveal">
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Blowouts</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Braids</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Eyebrow Shaping</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Eyebrow Threading</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Haircut</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Hair Extensions</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Hairstyling</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Massage</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Permanent Makeup</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Perms</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Shampoo & Conditioning</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Tanning</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Waxing</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Color & Balayage</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Shanaz Facial</span></div>
+    <div class="service-item"><span class="service-arrow">→</span><span class="service-name">Manicure & Pedicure</span></div>
   </div>
 </section>
-
+ 
 <!-- TEAM -->
 <section class="team" id="team">
-  <div class="section-header reveal">
-    <div>
-      <span class="section-label">Meet Our Stylists</span>
-      <h2 class="section-title">The <em>Hands</em><br>Behind the Magic</h2>
-    </div>
-  </div>
+  <span class="section-eyebrow">Our Specialists</span>
+  <h2 class="section-title reveal">The <em>Talent</em><br>Behind the Look</h2>
   <div class="team-grid">
     <div class="team-card reveal">
-      <div class="team-initial">P</div>
-      <div class="team-name">Priya</div>
-      <div class="team-specialty">Hair Stylist · Color Specialist</div>
-      <p class="team-desc">Known for stunning balayage, highlights, and precision cuts. Priya takes the time to understand exactly what you want — and delivers results that exceed expectations.</p>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-initial">N</div>
-      <div class="team-name">Neelam</div>
-      <div class="team-specialty">Brow Artist · Wax Specialist</div>
-      <p class="team-desc">The go-to for flawless eyebrows and full-body waxing. Neelam's meticulous attention to detail means you never have to check the mirror — her work speaks for itself.</p>
-    </div>
-    <div class="team-card reveal">
       <div class="team-initial">S</div>
-      <div class="team-name">Simran</div>
-      <div class="team-specialty">Wax Specialist</div>
-      <p class="team-desc">Clients return to Simran every four weeks, religiously. Her full-body wax and brow work is precise, professional, and flawless every single time.</p>
+      <div class="team-name">Sonia</div>
+      <div class="team-role">Hair Stylist · Color Specialist</div>
+      <p class="team-desc">Sonia executes cuts and balayage to perfection. Friendly, professional, and the kind of stylist clients rave about — and return to again and again.</p>
     </div>
     <div class="team-card reveal">
-      <div class="team-initial">B</div>
-      <div class="team-name">Bibi</div>
-      <div class="team-specialty">Hairdresser</div>
-      <p class="team-desc">Bibi brings warmth and talent to every appointment. An amazing person and an even better hairdresser — her clients say it all.</p>
+      <div class="team-initial">G</div>
+      <div class="team-name">Gillian</div>
+      <div class="team-role">Hairstylist</div>
+      <p class="team-desc">Clients travel from Long Island just for Gillian. Known for incredible washes, cuts, and blowouts that speak for themselves.</p>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-initial">I</div>
+      <div class="team-name">Idelmis</div>
+      <div class="team-role">Nail Technician</div>
+      <p class="team-desc">Idelmis brings dedication and artistry to every manicure and pedicure. She makes sure every client leaves exactly as happy as they hoped.</p>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-initial">P</div>
+      <div class="team-name">Pinky</div>
+      <div class="team-role">Brow Artist · Wax Specialist</div>
+      <p class="team-desc">Gentle, precise, and thorough — Pinky's eyebrow and threading work is the kind clients describe as the cleanest and best-shaped they've ever had.</p>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-initial">G</div>
+      <div class="team-name">Gita</div>
+      <div class="team-role">Hairstylist · Brow Artist</div>
+      <p class="team-desc">Gita's layered cuts and brow shaping keep clients coming back. Welcoming, warm, and talented in equal measure.</p>
+    </div>
+    <div class="team-card reveal">
+      <div class="team-initial">G</div>
+      <div class="team-name">Gladys</div>
+      <div class="team-role">Nail Technician</div>
+      <p class="team-desc">Patient, calm, and meticulous — Gladys has built a loyal following who come back every visit for her thorough, beautiful nail work.</p>
     </div>
     <div class="team-card reveal">
       <div class="team-initial">N</div>
-      <div class="team-name">Narissa</div>
-      <div class="team-specialty">Nail Technician</div>
-      <p class="team-desc">Narissa treats every client like family. Her nail work is beautiful and her care is genuine — the kind of technician you'll keep coming back to.</p>
-    </div>
-    <div class="team-card reveal">
-      <div class="team-initial">K</div>
-      <div class="team-name">Khameel</div>
-      <div class="team-specialty">Nail Technician</div>
-      <p class="team-desc">Khameel delivers gorgeous acrylic and manicure work that keeps clients coming back. Great experience guaranteed.</p>
+      <div class="team-name">Nina</div>
+      <div class="team-role">Reception · Coordinator</div>
+      <p class="team-desc">Nina makes sure every client feels taken care of from the moment they call. Understanding, caring, and the reason walk-ins feel so welcome.</p>
     </div>
   </div>
 </section>
-
+ 
 <!-- REVIEWS -->
 <section class="reviews" id="reviews">
-  <div class="section-header reveal">
+  <div class="reviews-header reveal">
     <div>
-      <span class="section-label">Client Reviews</span>
-      <h2 class="section-title">1,000+ Happy<br><em>Clients Say It Best</em></h2>
+      <span class="section-eyebrow">Client Love</span>
+      <h2 class="section-title" style="margin-bottom:0">What Our Clients <em>Say</em></h2>
     </div>
-    <div style="display:flex;align-items:center;gap:0.75rem;">
-      <span style="font-family:var(--f-display);font-size:3rem;font-weight:300;color:var(--plum);">4.8</span>
-      <div>
-        <div style="color:var(--gold);font-size:1.1rem;">★★★★★</div>
-        <div style="font-size:0.75rem;color:var(--mid);letter-spacing:0.08em;text-transform:uppercase;">Google Reviews</div>
-      </div>
+    <div class="reviews-badge">
+      <div class="reviews-badge-num">4.8</div>
+      <div class="reviews-badge-stars">★★★★★</div>
+      <div class="reviews-badge-label">1,100+ Google Reviews</div>
     </div>
   </div>
-
-  <div class="reviews-grid">
-    <div class="review-card reveal">
-      <div class="review-quote-mark">"</div>
-      <p class="review-text">Priya did an excellent job with my hair! She was professional, attentive, and really took the time to understand exactly what I wanted. The result came out even better than I expected. My hair looks amazing and feels so healthy.</p>
-      <div class="review-author">Lilian Rajput</div>
-      <div class="review-stars">★★★★★</div>
-      <span class="review-service">Hair Styling</span>
+  <div class="reviews-grid reveal">
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">O</div>
+        <div>
+          <div class="review-author-name">One Family Divya</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">Pinky did an absolutely amazing job on my eyebrows and threading. She was so gentle, precise, and really took her time to make sure everything was perfect. My brows have never looked this clean and well-shaped.</p>
+      <span class="review-service-tag">Eyebrow Shaping</span>
     </div>
-    <div class="review-card reveal">
-      <div class="review-quote-mark">"</div>
-      <p class="review-text">I visited for a balayage and had an overall excellent experience. Priya understood exactly what I needed and the results were ah-mazing! Very seamless to make the appointment, no wait time and very clean atmosphere.</p>
-      <div class="review-author">Vedna Sha · Local Guide</div>
-      <div class="review-stars">★★★★★</div>
-      <span class="review-service">Balayage</span>
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">N</div>
+        <div>
+          <div class="review-author-name">Nadira Samaroo · Local Guide</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">Gillian did an incredible job with my hair. Idelmis also gave me a wonderful pedicure. Both were exceptionally talented and very pleasant to be around. This is now my go-to place whenever I'm visiting New York.</p>
+      <span class="review-service-tag">Hair · Pedicure</span>
     </div>
-    <div class="review-card reveal">
-      <div class="review-quote-mark">"</div>
-      <p class="review-text">Neelam is the best for eyebrows and wax. She is very welcoming and makes me feel comfortable every time I go there. She also checks to make sure she didn't miss anything. Highly recommend!</p>
-      <div class="review-author">Sandy Das</div>
-      <div class="review-stars">★★★★★</div>
-      <span class="review-service">Eyebrows · Waxing</span>
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">A</div>
+        <div>
+          <div class="review-author-name">Amreta Singh</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">I always enjoy my visits here — lovely customer service and amazing hairstyles, especially my favorite Sonia. She never disappoints.</p>
+      <span class="review-service-tag">Hairstyling</span>
     </div>
-    <div class="review-card reveal">
-      <div class="review-quote-mark">"</div>
-      <p class="review-text">Love going to this salon even for a simple wash and blowout. Priya recently did highlights on me and they look exactly how I wanted. Will definitely be coming back — all the girls are kind, especially Priya!</p>
-      <div class="review-author">amelia</div>
-      <div class="review-stars">★★★★★</div>
-      <span class="review-service">Highlights · Haircut · Blowout</span>
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">G</div>
+        <div>
+          <div class="review-author-name">Gursimran Kaur</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">I called 30 minutes before and Nina got me an appointment right away. The salon is so nice and clean. Gita and Sonia were both welcoming — they took us in with little notice and my cousins loved it.</p>
+      <span class="review-service-tag">Blowouts · Haircut</span>
     </div>
-    <div class="review-card reveal">
-      <div class="review-quote-mark">"</div>
-      <p class="review-text">I did my full body wax and eyebrows with Simran — she is definitely someone I look forward to every 4 weeks religiously. Her work is amazing and flawless. I don't even have to check the mirror when she's done. Her work speaks for itself.</p>
-      <div class="review-author">Nina Nina</div>
-      <div class="review-stars">★★★★★</div>
-      <span class="review-service">Body Wax · Eyebrows</span>
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">C</div>
+        <div>
+          <div class="review-author-name">Chitrawatie Pokhai</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">Idelmis is very good at what she does. I went for a manicure and pedicure and I absolutely love the way they came out. She made sure I was happy before I left and did my nails exactly how I wanted.</p>
+      <span class="review-service-tag">Manicure · Pedicure</span>
     </div>
-    <div class="review-card reveal">
-      <div class="review-quote-mark">"</div>
-      <p class="review-text">Bibi, you're an amazing person and an even better hairdresser! Narissa did my mom's nails — she was so wonderful and treated my mom as if that was her grandmother. Time well spent.</p>
-      <div class="review-author">Sunita Somaroo · Local Guide</div>
-      <div class="review-stars">★★★★★</div>
-      <span class="review-service">Hair · Nails</span>
+    <div class="review-card">
+      <div class="review-top">
+        <div class="review-avatar">M</div>
+        <div>
+          <div class="review-author-name">Marlene Farfan</div>
+          <div class="review-stars">★★★★★</div>
+        </div>
+      </div>
+      <p class="review-text">I've been coming to this place for 10 years. I love how they renewed the place. Gladys does the nails — very patient and calm. She left me perfectly clean, no callous. I brought my daughter too.</p>
+      <span class="review-service-tag">Nails · 10-Year Client</span>
     </div>
   </div>
 </section>
-
+ 
 <!-- VISIT -->
 <section class="visit" id="visit">
   <div class="visit-info reveal">
-    <span class="section-label">Find Us</span>
-    <h2 class="section-title">Come <em>Visit</em><br>Roots</h2>
+    <span class="section-eyebrow">Find Us</span>
+    <h2 class="section-title">Come See Us<br><em>in South Queens</em></h2>
     <div class="visit-details">
-      <div class="visit-detail-item">
-        <div class="visit-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
+      <div class="visit-row">
+        <div class="visit-row-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/></svg>
         </div>
         <div>
-          <div class="visit-detail-label">Address</div>
-          <div class="visit-detail-value">
-            <a href="https://maps.google.com/?q=121-19+Liberty+Ave+South+Richmond+Hill+NY+11419" target="_blank">
-              121-19 Liberty Ave<br>South Richmond Hill, NY 11419
+          <div class="visit-row-label">Address</div>
+          <div class="visit-row-value">
+            <a href="https://maps.google.com/?q=118-11+Liberty+Ave+South+Richmond+Hill+NY+11419" target="_blank">
+              118-11 Liberty Ave<br>South Richmond Hill, NY 11419
             </a>
           </div>
         </div>
       </div>
-      <div class="visit-detail-item">
-        <div class="visit-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.8 19.79 19.79 0 01.98 3.18 2 2 0 012.96 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+      <div class="visit-row">
+        <div class="visit-row-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 11.8 19.79 19.79 0 01.98 3.18 2 2 0 012.96 1h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L7.09 8.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
         </div>
         <div>
-          <div class="visit-detail-label">Phone</div>
-          <div class="visit-detail-value"><a href="tel:7188802154">(718) 880-2154</a></div>
+          <div class="visit-row-label">Phone</div>
+          <div class="visit-row-value"><a href="tel:7183221698">(718) 322-1698</a></div>
         </div>
       </div>
-      <div class="visit-detail-item">
-        <div class="visit-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+      <div class="visit-row">
+        <div class="visit-row-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
         </div>
         <div>
-          <div class="visit-detail-label">Walk-ins</div>
-          <div class="visit-detail-value">Walk-ins accepted · Appointments welcome</div>
+          <div class="visit-row-label">Hours</div>
+          <div class="visit-row-value">Mon–Thu 10AM–7PM · Fri–Sat 9AM–7PM · Sun 10AM–7PM</div>
         </div>
       </div>
-      <div class="visit-detail-item">
-        <div class="visit-icon">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#C9A84C" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+      <div class="visit-row">
+        <div class="visit-row-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#E8245C" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
         </div>
         <div>
-          <div class="visit-detail-label">Hours</div>
-          <div class="visit-detail-value">Call us at (718) 880-2154 for current hours</div>
+          <div class="visit-row-label">Walk-ins</div>
+          <div class="visit-row-value">Walk-ins accepted · Appointments available</div>
         </div>
       </div>
-    </div>
-    <div style="margin-top:2.5rem;">
-      <a href="tel:7188802154" class="btn-primary">Call to Book</a>
     </div>
   </div>
-
   <div class="visit-map reveal">
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.8!2d-73.8245!3d40.6935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c26709d62cd10d%3A0xc7b16f4f12504b6e!2sRoots%20Hair%20Concept!5e0!3m2!1sen!2sus!4v1700000000000"
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d755.8!2d-73.8252!3d40.6930!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c2674ecc2a8edb%3A0x8316d76ff15bdccf!2sGlamour%20Hair%20Concept!5e0!3m2!1sen!2sus!4v1700000000001"
       allowfullscreen=""
       loading="lazy"
       referrerpolicy="no-referrer-when-downgrade"
-      title="Roots Hair Concept location map">
+      title="Glamour Hair Concept location">
     </iframe>
+    <div class="visit-map-overlay"></div>
   </div>
 </section>
-
+ 
+<!-- BOOK BAR -->
+<div class="book-bar">
+  <span class="book-bar-text">Ready for your next look?</span>
+  <a href="tel:7183221698" class="btn-white">Call (718) 322-1698</a>
+</div>
+ 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">Roots Hair Concept</div>
-  <ul class="footer-links">
+  <div class="footer-logo">Glamour<span>.</span> Hair Concept</div>
+  <ul class="footer-nav">
     <li><a href="#services">Services</a></li>
     <li><a href="#team">Team</a></li>
     <li><a href="#reviews">Reviews</a></li>
     <li><a href="#visit">Visit</a></li>
   </ul>
-  <div class="footer-copy">© 2025 Roots Hair Concept · South Richmond Hill, NY</div>
+  <div class="footer-copy">© 2025 Glamour Hair Concept Inc · South Richmond Hill, NY</div>
 </footer>
-
+ 
 <script>
-  // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
-  const observer = new IntersectionObserver((entries) => {
+  const obs = new IntersectionObserver((entries) => {
     entries.forEach(el => {
       if (el.isIntersecting) {
         el.target.classList.add('visible');
-        observer.unobserve(el.target);
+        obs.unobserve(el.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
-  reveals.forEach(el => observer.observe(el));
-
-  // Stagger team cards
-  document.querySelectorAll('.team-card.reveal, .review-card.reveal').forEach((el, i) => {
-    el.style.transitionDelay = `${i * 0.08}s`;
+  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
+  reveals.forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 4) * 0.07}s`;
+    obs.observe(el);
   });
 </script>
-
+ 
 </body>
 </html>
+ 
